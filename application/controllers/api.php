@@ -16,12 +16,12 @@ class api extends REST_Controller
         $this->load->model('M_pegawai');
     }
 
-    public function index_get()
+    public function index_post()
     {
 
 
-        $id = antiinjection($this->get('id'));
-        $handkey = antiinjection($this->get('handkey'));
+        $id = antiinjection($this->post('id'));
+        $handkey = antiinjection($this->post('handkey'));
 
 
         if (!empty($id) && !empty($handkey)) {
