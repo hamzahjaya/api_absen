@@ -23,7 +23,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+define('SERVER_PROTOCOL', ($_SERVER['SERVER_PORT'] == 443 ? 'https://' : 'http://'));
+$config['base_url'] = SERVER_PROTOCOL . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . '/api_absen/';
 
 /*
 |--------------------------------------------------------------------------
