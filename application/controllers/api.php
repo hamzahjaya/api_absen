@@ -1,4 +1,5 @@
 <?php
+
 use Restserver\Libraries\REST_Controller;
 
 defined('BASEPATH') or exit('No direct script access allowed');
@@ -6,7 +7,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 require APPPATH . 'libraries/REST_Controller.php';
 require APPPATH . 'libraries/Format.php';
 
-class api extends REST_Controller
+class Api extends REST_Controller
 {
     function __construct()
     {
@@ -24,10 +25,10 @@ class api extends REST_Controller
             $pegawai = $this->M_pegawai->data_pegawai($id, $handkey);
             if (count($pegawai) > 0) {
                 $this->response([
-                        'status'  => TRUE,
-                        'message' => 'Data ditemukan',
-                        'data'    => $pegawai
-                    ], REST_Controller::HTTP_OK);
+                    'status'  => TRUE,
+                    'message' => 'Data ditemukan',
+                    'data'    => $pegawai
+                ], REST_Controller::HTTP_OK);
             } else {
                 $this->response([
                     'status'  => false,
